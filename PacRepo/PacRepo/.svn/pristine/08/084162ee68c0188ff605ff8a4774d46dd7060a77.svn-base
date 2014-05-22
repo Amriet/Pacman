@@ -1,0 +1,57 @@
+package pacmangame;
+
+import java.awt.GridLayout;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+import javax.swing.JPanel;
+/**
+ *
+ * @author Evert
+ */
+public class Scherm extends JPanel implements KeyListener {
+
+    private Vakje[][] vakjes;
+    private Pacman pacman;
+    
+    public Scherm() {
+        initComponents();
+    }
+    
+    private void initComponents() {
+        this.setLayout(new GridLayout(14, 25));
+        this.pacman = new Pacman("pacman.png");
+        addKeyListener(this);
+        
+        this.vakjes = new Vakje[14][25];
+        for(int i=0; i<14; i++) {
+            for(int j=0; j<25; j++) {
+                vakjes[i][j] = new Vakje();
+                this.add(vakjes[i][j]);
+            }
+        }
+        for(int i=0; i<14; i++) {
+            for(int j=0; j<25; j++) {
+                if(i != 0) { vakjes[i][j].buren.put("NOORD", vakjes[i-1][j]); }
+                if(j < 24) { vakjes[i][j].buren.put("OOST", vakjes[i][j+1]); }
+                if(i < 13) { vakjes[i][j].buren.put("ZUID", vakjes[i+1][j]); }
+                if(j != 0) { vakjes[i][j].buren.put("WEST", vakjes[i][j-1]); }
+            }
+        }
+        
+        vakjes[5][5].addObject(pacman);
+        requestFocus();
+        repaint();
+    }
+    
+    @Override
+    public void keyPressed(KeyEvent e) {}
+    
+    @Override
+    public void keyReleased(KeyEvent e) {
+        System.out.println("Released");
+    }
+    
+    @Override
+    public void keyTyped(KeyEvent e) {}
+    
+}

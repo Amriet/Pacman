@@ -1,0 +1,55 @@
+package pacmangame;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JLabel;
+import javax.swing.JButton;
+import java.awt.BorderLayout;
+import java.awt.Color;
+/**
+ *
+ * @author Evert
+ */
+public class Level extends JFrame {
+    
+    private final JPanel menu, screen;
+    private final JLabel score, levens;
+    private final JButton start, herstart, pauze, sluiten;
+    private final int aantalSpoken;
+    
+    public Level(int aantalSpoken) {
+        this.aantalSpoken = aantalSpoken;
+        this.setLayout(new BorderLayout());
+        this.setDefaultCloseOperation(3);
+        this.setResizable(false);
+        this.setUndecorated(true);
+        
+        this.start = new JButton("Start");
+        this.start.setSize(200, 50);
+        this.herstart = new JButton("Herstart");
+        this.herstart.setSize(200, 50);
+        this.pauze = new JButton("Pauze");
+        this.pauze.setSize(200, 50);
+        this.sluiten = new JButton("Sluiten");
+        this.sluiten.setSize(200, 50);
+        
+        this.score = new JLabel("Score: 0");
+        this.levens = new JLabel("Levens: 3");
+        
+        this.menu = new JPanel();
+        this.menu.setBackground(Color.CYAN);
+        this.screen = new JPanel();
+        this.screen.setBackground(Color.yellow);
+        
+        this.menu.add(start);
+        this.menu.add(pauze);
+        this.menu.add(herstart);
+        this.menu.add(sluiten);
+        this.menu.add(levens);
+        this.menu.add(score);
+        
+        this.add(menu, BorderLayout.NORTH);
+        this.add(screen, BorderLayout.CENTER);
+    }
+    
+}

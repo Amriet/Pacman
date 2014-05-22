@@ -1,0 +1,17 @@
+package pacmangame;
+
+/**
+ *
+ * @author Evert
+ */
+public abstract class Poppetje extends GameObject {
+    
+    public Poppetje(String spritename) {
+        super(spritename);
+    }
+    
+    private void bewegen(int richting) {}
+    
+    private void verdwijn() {}
+    
+}

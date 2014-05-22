@@ -1,0 +1,32 @@
+package pacmangame;
+
+import java.awt.GraphicsEnvironment;
+import javax.swing.JFrame;
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
+/**
+ *
+ * @author Evert
+ */
+public class PacmanGame {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        setLookAndFeel();
+        
+        JFrame level = new Level(1);
+        GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice().setFullScreenWindow(level);
+    }
+    
+    private static void setLookAndFeel()
+    {
+        try { UIManager.setLookAndFeel( UIManager.getSystemLookAndFeelClassName() ); }
+        catch (UnsupportedLookAndFeelException e) {}
+        catch (ClassNotFoundException e) {}
+        catch (InstantiationException e) {}
+        catch (IllegalAccessException e) {}
+    }
+
+}

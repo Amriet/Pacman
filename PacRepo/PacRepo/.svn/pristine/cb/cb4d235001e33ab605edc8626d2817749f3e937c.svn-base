@@ -1,0 +1,20 @@
+package pacmangame;
+
+/**
+ *
+ * @author Evert
+ */
+public class Pacman extends Poppetje {
+    
+    private int levens, score;
+    private boolean isOnverslaanbaar;
+    
+    public Pacman(String spritename) {
+        super(spritename);
+        
+        this.levens = 3;
+        this.score = 0;
+        this.isOnverslaanbaar = false;
+    }
+    
+}

@@ -1,0 +1,17 @@
+package pacmangame;
+
+import java.awt.Graphics;
+import javax.swing.JPanel;
+/**
+ *
+ * @author Evert
+ */
+public class Scherm extends JPanel {
+
+    @Override
+    public void paintComponent(Graphics g) {
+        super.paintComponent(g);
+        g.drawImage(new Pacman("pacman.png").getSprite(), 10, 10, null);
+    }
+    
+}
