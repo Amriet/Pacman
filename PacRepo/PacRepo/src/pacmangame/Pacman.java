@@ -2,21 +2,20 @@ package pacmangame;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-/**
- *
- * @author Evert
- */
-public class Pacman extends Poppetje implements KeyListener {
-    
+
+public class Pacman extends Poppetje implements KeyListener 
+{
     private int levens, score;
     private boolean isOnverslaanbaar;
     
-    public Pacman(String spritename) {
+    public Pacman(String spritename) 
+    {
         super(spritename);
         initComponents();
     }
     
-    private void initComponents() {
+    private void initComponents() 
+    {
         this.levens = 3;
         this.score = 0;
         this.isOnverslaanbaar = false;
@@ -26,8 +25,12 @@ public class Pacman extends Poppetje implements KeyListener {
     public void keyPressed(KeyEvent e) {}
     
     @Override
-    public void keyReleased(KeyEvent e) {
-        System.out.println("Released");
+    public void keyReleased(KeyEvent e) 
+    {
+        if(KeyEvent.VK_UP == 0)
+        {
+            System.out.println("Test");
+        }
         switch	(e.getKeyCode()){	
             case KeyEvent.VK_KP_UP: bewegen("NOORD"); break;
             case KeyEvent.VK_KP_RIGHT: bewegen("OOST"); break;

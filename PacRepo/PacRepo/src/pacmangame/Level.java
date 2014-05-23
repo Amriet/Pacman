@@ -1,33 +1,31 @@
 package pacmangame;
 
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.JLabel;
-import javax.swing.JButton;
-
 import java.awt.BorderLayout;
 import java.awt.Color;
-/**
- *
- * @author Evert
- */
-public class Level extends JFrame {
-    
+import java.awt.GridLayout;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+public class Level extends JFrame 
+{
     private JPanel menu;
     private Scherm screen;
     private JLabel score, levens;
     private JButton start, herstart, pauze, sluiten;
     
-    public Level() {
+    public Level() 
+    {
         initComponents();
     }
     
-    private void initComponents() {
+    private void initComponents() 
+    {
         this.setLayout(new BorderLayout());
         this.setDefaultCloseOperation(3);
         this.setResizable(false);
         this.setUndecorated(true);
-        
         
         this.start = new JButton("Start");
         this.start.setSize(50, 50);
@@ -42,20 +40,19 @@ public class Level extends JFrame {
         this.levens = new JLabel("Levens: 3");
         
         this.menu = new JPanel();
+        menu.setLayout(new GridLayout(10,1));
         this.menu.setBackground(Color.CYAN);
         
-        String content = "WWWWWW\nW    W\nW  P W\nW    W\nWWWWWW";
+        String content = "WWWWWWWWWWWW\nW  P W     W\nW WW W W W W\nW          W\nW W WWW WWWW\nW W        W\nW  W WW WW W\nWW W W   W W\nW      W   W\nW WWWW WWW W\nW          W\nWWWWWWWWWWWW";
         
-        try {
-        	this.screen = new Scherm(content);
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-        
-        
-        
-        
+        try 
+        {
+            this.screen = new Scherm(content);
+        } 
+        catch (Exception e) 
+        {
+            e.printStackTrace();
+	}
         
         this.screen.setBackground(Color.BLACK);
         

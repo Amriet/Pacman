@@ -2,8 +2,8 @@ package pacmangame;
 
 import java.util.ArrayList;
 
-public class GameLevel {
-
+public class GameLevel 
+{
 	private int width = 0;
 	private int height = 0;
 	
@@ -12,12 +12,6 @@ public class GameLevel {
 	
 	public GameLevel(String levelConfig) throws Exception
 	{
-		//EXAMPLE LEVEL FORMATTING
-		//WWWWWW
-		//W    W
-		//WWWWWW
-		
-		System.out.println("Loading level:");
 		System.out.println(levelConfig);
 		
 		if (levelConfig == null)
@@ -35,12 +29,11 @@ public class GameLevel {
 		for (int y = 0; y < lines.length ; y++)
 		{
 			String line = lines[y];
-			//System.out.println(line);
 			
 			if (width == 0)
 				width = line.length();
 			else if (width != line.length())
-				throw new Exception("Level line length is not consistent.");
+				throw new Exception("Het aantal regels is niet gelijk!");
 			
 			for (int x = 0; x < line.length(); x++)
 			{
@@ -54,7 +47,7 @@ public class GameLevel {
 				} else if (String.valueOf(line.charAt(x)).equals("P"))
 				{
 					if (hasPacman)
-						throw new Exception("Pacman has multiple locations.");
+						throw new Exception("Pacman mag maar één keer voorkomen!");
 					else
 						hasPacman = true;
 					
@@ -62,48 +55,53 @@ public class GameLevel {
 					entities.add(new EntityPacman(x, currentY));
 				} else
 				{
-					throw new Exception("Unknown character '" + String.valueOf(line.charAt(x)) + "' used in level makeup.");
+					throw new Exception("Onbekend teken ingevoerd: " + String.valueOf(line.charAt(x)));
 				}
 			}
 			
 		
 			height++;
 			currentY++;
-		}
-		
-		System.out.println("Load successful.");
-		
+		}	
 	}
 
-	public int getWidth() {
+	public int getWidth() 
+        {
 		return width;
 	}
 
-	public void setWidth(int width) {
+	public void setWidth(int width) 
+        {
 		this.width = width;
 	}
 
-	public int getHeight() {
+	public int getHeight() 
+        {
 		return height;
 	}
 
-	public void setHeight(int height) {
+	public void setHeight(int height)
+        {
 		this.height = height;
 	}
 
-	public ArrayList<Entity> getEntities() {
+	public ArrayList<Entity> getEntities() 
+        {
 		return entities;
 	}
 
-	public void setEntities(ArrayList<Entity> entities) {
+	public void setEntities(ArrayList<Entity> entities) 
+        {
 		this.entities = entities;
 	}
 
-	public ArrayList<Tile> getTiles() {
+	public ArrayList<Tile> getTiles() 
+        {
 		return tiles;
 	}
 
-	public void setTiles(ArrayList<Tile> tiles) {
+	public void setTiles(ArrayList<Tile> tiles) 
+        {
 		this.tiles = tiles;
 	}
 	
