@@ -14,6 +14,8 @@ public class Level extends JFrame
     private Scherm screen;
     private JLabel score, levens;
     private JButton start, herstart, pauze, sluiten;
+    private Pacman pacman;
+
     
     public Level() 
     {
@@ -29,12 +31,20 @@ public class Level extends JFrame
         
         this.start = new JButton("Start");
         this.start.setSize(50, 50);
+        start.setFocusable(false);
         this.herstart = new JButton("Herstart");
         this.herstart.setSize(50, 50);
+        herstart.setFocusable(false);
         this.pauze = new JButton("Pauze");
         this.pauze.setSize(50, 50);
+        pauze.setFocusable(false);
         this.sluiten = new JButton("Sluiten");
         this.sluiten.setSize(50, 50);
+        sluiten.setFocusable(false);
+       
+        this.setFocusable(true);
+        this.pacman = new Pacman("pacman.png");
+        this.addKeyListener(pacman);
         
         this.score = new JLabel("Score: 0");
         this.levens = new JLabel("Levens: 3");

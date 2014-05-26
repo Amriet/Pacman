@@ -6,7 +6,7 @@ import java.awt.event.KeyListener;
 
 import javax.swing.JPanel;
 
-public class Scherm extends JPanel implements KeyListener 
+public class Scherm extends JPanel implements KeyListener
 {
 
     private Vakje[][] vakjes;

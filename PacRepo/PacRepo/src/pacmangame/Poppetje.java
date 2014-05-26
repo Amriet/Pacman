@@ -9,14 +9,11 @@ public abstract class Poppetje extends GameObject
     
     public void bewegen(String richting) 
     {
-        Vakje targetVakje = this.vakje.buren.get(richting);
-        targetVakje.addObject(this);
-        this.vakje.removeObject();
-        this.vakje = targetVakje;
-        this.vakje.repaint();
+        //Vakje targetVakje = this.vakje.buren.get(richting);
+        //targetVakje.addObject(this);
+        //this.vakje.removeObject();
+        //this.vakje = targetVakje;
+        //this.vakje.repaint();
         System.out.println(richting);
     }
-    
-    private void verdwijn() {}
-    
 }

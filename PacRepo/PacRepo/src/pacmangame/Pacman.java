@@ -27,11 +27,9 @@ public class Pacman extends Poppetje implements KeyListener
     @Override
     public void keyReleased(KeyEvent e) 
     {
-        if(KeyEvent.VK_UP == 0)
-        {
-            System.out.println("Test");
-        }
-        switch	(e.getKeyCode()){	
+        
+        switch	(e.getKeyCode())
+        {	
             case KeyEvent.VK_KP_UP: bewegen("NOORD"); break;
             case KeyEvent.VK_KP_RIGHT: bewegen("OOST"); break;
             case KeyEvent.VK_KP_DOWN: bewegen("ZUID"); break;
